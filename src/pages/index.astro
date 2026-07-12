@@ -3,10 +3,12 @@ import Layout from '../layouts/Layout.astro';
 
 const projects = [
 	{
-		title: 'Project One',
-		description: 'TODO: one or two sentences about what this project does and why you built it.',
-		link: 'https://github.com/ssvito',
-		tags: ['TODO'],
+		title: 'ICE Breaker',
+		description:
+			'A cyberpunk tower-defense game built from scratch with vanilla TypeScript and the Canvas API — installable as a PWA, playable on desktop and mobile.',
+		link: 'https://ssvito.github.io/ice-breaker/',
+		repo: 'https://github.com/ssvito/ice-breaker',
+		tags: ['TypeScript', 'Canvas API', 'PWA'],
 	},
 	{
 		title: 'Project Two',
@@ -47,13 +49,19 @@ const projects = [
 			<div style="display: grid; gap: 1.25rem;">
 				{
 					projects.map((project) => (
-						<a
-							href={project.link}
-							style="display: block; padding: 1.25rem; background: var(--card); border: 1px solid var(--border); border-radius: 8px; text-decoration: none; color: var(--fg);"
-						>
-							<h3 style="margin: 0 0 0.4rem; color: var(--fg);">{project.title}</h3>
-							<p style="margin: 0; color: var(--muted);">{project.description}</p>
-						</a>
+						<div style="padding: 1.25rem; background: var(--card); border: 1px solid var(--border); border-radius: 8px;">
+							<h3 style="margin: 0 0 0.4rem;">
+								<a href={project.link} style="color: var(--fg); text-decoration: none;">
+									{project.title}
+								</a>
+							</h3>
+							<p style="margin: 0 0 0.6rem; color: var(--muted);">{project.description}</p>
+							{project.repo && (
+								<a href={project.repo} style="font-size: 0.9rem;">
+									Source →
+								</a>
+							)}
+						</div>
 					))
 				}
 			</div>
