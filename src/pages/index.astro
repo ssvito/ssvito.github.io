@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const projects = [
+	{
+		title: 'Project One',
+		description: 'TODO: one or two sentences about what this project does and why you built it.',
+		link: 'https://github.com/ssvito',
+		tags: ['TODO'],
+	},
+	{
+		title: 'Project Two',
+		description: 'TODO: replace with a real project once you have one to show.',
+		link: 'https://github.com/ssvito',
+		tags: ['TODO'],
+	},
+	{
+		title: 'Project Three',
+		description: 'TODO: replace with a real project once you have one to show.',
+		link: 'https://github.com/ssvito',
+		tags: ['TODO'],
+	},
+];
+---
+
+<Layout title="ssvito">
+	<main>
+		<section id="hero" style="margin-top: 0;">
+			<h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">ssvito</h1>
+			<p style="color: var(--muted); font-size: 1.15rem; margin: 0;">
+				TODO: a one-line tagline about who you are or what you do.
+			</p>
+		</section>
+
+		<section id="about">
+			<h2>About</h2>
+			<p>
+				TODO: a short paragraph about yourself — background, interests, what you're
+				currently learning or working on.
+			</p>
+		</section>
+
+		<section id="projects">
+			<h2>Projects</h2>
+			<div style="display: grid; gap: 1.25rem;">
+				{
+					projects.map((project) => (
+						<a
+							href={project.link}
+							style="display: block; padding: 1.25rem; background: var(--card); border: 1px solid var(--border); border-radius: 8px; text-decoration: none; color: var(--fg);"
+						>
+							<h3 style="margin: 0 0 0.4rem; color: var(--fg);">{project.title}</h3>
+							<p style="margin: 0; color: var(--muted);">{project.description}</p>
+						</a>
+					))
+				}
+			</div>
+		</section>
+
+		<section id="contact">
+			<h2>Contact</h2>
+			<p>
+				<a href="https://github.com/ssvito">GitHub</a>
+				&nbsp;·&nbsp;
+				<a href="mailto:vitor.marcolin.ads@gmail.com">Email</a>
+			</p>
+		</section>
+	</main>
+</Layout>
